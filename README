@@ -1,0 +1,41 @@
+The Steamknight Project
+
+Developer:
+Sylvester Ink
+
+Table of Contents:
+    1.  Requirements
+    2.  Compiling
+    3.  Installation
+    4.  Changelog
+
+1. Requirements:
+    Compiling this project will require the following packages:
+        CMake
+        OpenGL
+        OpenAL
+        SDL
+        Ogg
+        Vorbis
+    Running the program will require the runtimes of all the packages, with the exception of CMake.
+
+2. Compiling
+    First, clone this git repository to a local directory:
+        git clone git://github.com/sylvesterink/steamknight.git
+
+    Next, to compile the project, create the CMake build directories and compile.
+        mkdir steamknight/build
+        cd steamknight/build
+        cmake -DCMAKE_BUILD_TYPE=Debug ../
+            OR
+        cmake -DCMAKE_BUILD_TYPE=Release ../
+        make
+
+3. Installation
+    To Be Added
+
+4. Changelog
+    0.0.1
+    Thu Jan 12 23:47:47 PST 2012
+        -Initial version
+        -Test of the game states

@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "SteamknightConfig.h"
 
 int main(int argc, const char *argv[])
 {
@@ -37,6 +38,10 @@ int Game::execute()
 bool Game::initialize()
 {
     cout << "Initialized" << endl;
+    cout << "Version:";
+    cout << STEAMKNIGHT_VERSION_MAJOR;
+    cout << " " << STEAMKNIGHT_VERSION_MINOR;
+    cout << " " << STEAMKNIGHT_VERSION_BUILD << endl;
 
     return true;
 }

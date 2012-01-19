@@ -24,15 +24,20 @@ namespace ie_game
 
             bool initialize(int width, int height, int bitsPerPixel, bool isFullscreen,
                     const string& title);
-            void setSize(int width, int height);
+            bool setSize(int width, int height);
             int getHeight();
             int getWidth();
+
+        protected:
+            bool initializeOpenGL();
+            bool initializeSDL();
 
         private:
             int _width;
             int _height;
             int _bitsPerPixel;
             bool _isFullscreen;
+            bool _isInitialized;
             string _title;
     };
 };

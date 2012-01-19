@@ -3,8 +3,11 @@
 
 //#include <SDL/SDL.h>
 
-namespace game
+namespace ie_game
 {
+    /**
+     * @brief The basic game object context.
+     */
     class GameBase {
         protected:
             bool _isRunning;

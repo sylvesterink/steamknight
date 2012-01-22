@@ -5,7 +5,7 @@
 
 #include <SDL/SDL.h>
 #include <SDL/SDL_opengl.h>
-//#include <GL/gl.h>
+#include <GL/gl.h>
 //#include <GL/glu.h>
 
 using std::string;
@@ -18,6 +18,14 @@ namespace ie_game
      */
     class GameWindow
     {
+        protected:
+            int _width;
+            int _height;
+            int _bitsPerPixel;
+            bool _isFullscreen;
+            bool _isInitialized;
+            string _title;
+
         public:
             GameWindow();
             ~GameWindow();
@@ -31,15 +39,7 @@ namespace ie_game
         protected:
             bool initializeOpenGL();
             bool initializeSDL();
-
-        private:
-            int _width;
-            int _height;
-            int _bitsPerPixel;
-            bool _isFullscreen;
-            bool _isInitialized;
-            string _title;
     };
-};
+}
 
 #endif /* end of include guard: GAMEWINDOW_H */

@@ -1,7 +1,9 @@
 #ifndef GAMEBASE_111P0ECW
 #define GAMEBASE_111P0ECW
 
-//#include <SDL/SDL.h>
+#include <SDL/SDL.h>
+
+#include "GameWindow.h"
 
 namespace ie_game
 {
@@ -11,6 +13,7 @@ namespace ie_game
     class GameBase {
         protected:
             bool _isRunning;
+            GameWindow* _window;
 
         public:
             GameBase ();
@@ -20,7 +23,7 @@ namespace ie_game
 
         protected:
             virtual bool initialize();
-            virtual void processEvents();
+            virtual void processEvents(SDL_Event&);
             virtual void processLogic();
             virtual void render();
 

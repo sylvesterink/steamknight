@@ -57,7 +57,7 @@ namespace ie_game
         return true;
     }
 
-    bool initializeOpenGL()
+    bool GameWindow::initializeOpenGL()
     {
         // Set up OpenGL attributes
         // All values are "at least"!
@@ -86,7 +86,7 @@ namespace ie_game
         return true;
     }
 
-    bool initializeSDL()
+    bool GameWindow::initializeSDL()
     {
         // Set the title.
         SDL_WM_SetCaption(_title.c_str(), _title.c_str());
@@ -128,4 +128,4 @@ namespace ie_game
     {
         return _width;
     }
-};
+}

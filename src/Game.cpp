@@ -15,6 +15,7 @@ int main(int argc, const char *argv[])
     return steamknight.execute();
 }
 
+//TODO: Call Gamebase constructor
 Game::Game()
 {
     cout << "Begin Game" << endl;

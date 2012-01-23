@@ -2,6 +2,7 @@
 
 namespace ie_game
 {
+    //TODO: init _title
     GameWindow::GameWindow():
         _width(0),
         _height(0),

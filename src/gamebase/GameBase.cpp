@@ -5,7 +5,9 @@ namespace ie_game
     /**
      * @brief Create game object.
      */
-    GameBase::GameBase()
+    //TODO: init _window in initializer list
+    GameBase::GameBase():
+        _isRunning(false)
     {
         _window = NULL;
     }
@@ -67,6 +69,8 @@ namespace ie_game
 
         //TODO: put this elsewhere
         glClearColor(0.0, 0.0, 0.0, 1.0);
+
+        _isRunning = true;
 
         return true;
     }

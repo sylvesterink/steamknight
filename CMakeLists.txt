@@ -8,7 +8,7 @@ ENABLE_LANGUAGE(C)
 # The version number.
 set (STEAMKNIGHT_VERSION_MAJOR 0)
 set (STEAMKNIGHT_VERSION_MINOR 0)
-set (STEAMKNIGHT_VERSION_BUILD 1)
+set (STEAMKNIGHT_VERSION_BUILD 1232012)
 
 # configure a header file to pass some of the CMake settings
 # to the source code

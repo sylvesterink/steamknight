@@ -2,13 +2,16 @@
 
 namespace ie_game
 {
-    //TODO: init _title
+    /**
+     * @brief Initialize default window object properties
+     */
     GameWindow::GameWindow():
         _width(0),
         _height(0),
         _bitsPerPixel(0),
         _isFullscreen(false),
-        _isInitialized(false)
+        _isInitialized(false),
+        _title("")
     {
 
     }

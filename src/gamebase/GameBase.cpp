@@ -36,6 +36,7 @@ namespace ie_game
 
         SDL_Event Event;
 
+        // Run game loop
         while (_isRunning) {
             while (SDL_PollEvent(&Event)) {
                 processEvents(Event);
@@ -43,6 +44,10 @@ namespace ie_game
 
             processLogic();
             render();
+
+            // Added to prevent monopolization of cpu.
+            SDL_Delay(1);
+
         }
 
         cleanup();
@@ -77,6 +82,7 @@ namespace ie_game
 
     /**
      * @brief Given an SDL event, process the event as required.
+     * TODO: Add more events
      */
     void GameBase::processEvents(SDL_Event& Event)
     {

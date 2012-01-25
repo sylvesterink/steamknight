@@ -2,7 +2,6 @@
 #define GAMEBASE_111P0ECW
 
 #include <SDL/SDL.h>
-#include <iostream>
 
 #include "GameWindow.h"
 

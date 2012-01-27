@@ -16,10 +16,22 @@ namespace ie_game
 
     }
 
+    /**
+     * @brief Object destructor
+     */
     GameWindow::~GameWindow()
     {
     }
 
+    /**
+     * @brief Initialize the window and set default settings
+     * @param width Pixel width of the window
+     * @param height Pixel height of the window
+     * @param bitsPerPixel Bit depth per pixel
+     * @param isFullscreen Whether to render as a window or fullscreen
+     * @param title The title of the window
+     * @return True if initialization was successful, false if it failed
+     */
     bool GameWindow::initialize(int width, int height, int bitsPerPixel,
             bool isFullscreen, const string& title)
     {
@@ -41,6 +53,7 @@ namespace ie_game
             _bitsPerPixel = 8;
         }
 
+        // Initialize SDL and OpenGL
         if (initializeSDL() == false) {
             return false;
         }
@@ -61,6 +74,11 @@ namespace ie_game
         return true;
     }
 
+    /**
+     * @brief Initialize OpenGL attributes
+     * @return Whether initialization was successful or not
+     */
+    //TODO: Check for opengl errors before returning
     bool GameWindow::initializeOpenGL()
     {
         // Set up OpenGL attributes
@@ -86,7 +104,6 @@ namespace ie_game
         //SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS,  1);   //Enable AA
         //SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES,  2);   //How much AA
 
-        // TODO: Check for opengl errors before returning
         return true;
     }
 

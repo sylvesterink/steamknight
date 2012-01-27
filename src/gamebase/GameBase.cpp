@@ -7,9 +7,10 @@ namespace ie_game
      */
     //TODO: init _window in initializer list
     GameBase::GameBase():
-        _isRunning(false)
+        _isRunning(false),
+        _window(NULL)
     {
-        _window = NULL;
+
     }
 
     /**

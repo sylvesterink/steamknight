@@ -107,6 +107,10 @@ namespace ie_game
         return true;
     }
 
+    /**
+     * @brief Initialize SDL attributes
+     * @return Whether initialization was successful or not
+     */
     bool GameWindow::initializeSDL()
     {
         // Set the title.
@@ -127,7 +131,14 @@ namespace ie_game
         return true;
     }
 
+    /**
+     * @brief Set the new size of the window
+     * @param width New window width
+     * @param height New window height
+     * @return Whether the resize was successful
+     */
     //TODO: Make window process resize and re-initialize
+    //      Also, this may not change resolution either
     bool GameWindow::setSize(int width, int height)
     {
         if (!_isInitialized) {
@@ -140,13 +151,21 @@ namespace ie_game
         return true;
     }
 
-    int GameWindow::getHeight()
-    {
-        return _height;
-    }
-
+    /**
+     * @brief Get the width of the window
+     * @return Window width
+     */
     int GameWindow::getWidth()
     {
         return _width;
+    }
+
+    /**
+     * @brief Get the height of the window
+     * @return Window height
+     */
+    int GameWindow::getHeight()
+    {
+        return _height;
     }
 }

@@ -1,4 +1,4 @@
-#include "GameBase.h"
+#include "TestBase.h"
 
 /**
  * @brief Main function.  Creates a game class and executes.
@@ -8,7 +8,7 @@
  */
 int main(int argc, const char *argv[])
 {
-    ie_game::GameBase windowTest;
+    TestBase windowTest;
 
     return windowTest.execute();
 }

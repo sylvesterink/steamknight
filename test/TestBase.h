@@ -1,23 +1,22 @@
-#ifndef STEAMKNIGHT_H
-#define STEAMKNIGHT_H
+#ifndef TESTBASE_H
+#define TESTBASE_H
 
-#include <iostream>
 #include "GameBase.h"
 
-class Game : public ie_game::GameBase {
+class TestBase : public ie_game::GameBase {
     public:
-        Game ();
-        virtual ~Game ();
+        TestBase();
+        virtual ~TestBase();
 
         virtual int execute();
 
     protected:
         virtual bool initialize();
-        virtual void processEvents();
+        virtual void processEvents(SDL_Event&);
         virtual void processLogic();
         virtual void render();
 
         virtual void cleanup();  // May not be needed.  Use destructor
 };
 
-#endif /* end of include guard: STEAMKNIGHT_H */
+#endif /* end of include guard: TESTBASE_H */

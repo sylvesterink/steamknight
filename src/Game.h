@@ -15,7 +15,7 @@ class Game : public ie_game::GameBase {
 
     protected:
         virtual bool initialize();
-        virtual void processEvents();
+        virtual void processEvents(SDL_Event&);
         virtual void processLogic();
         virtual void render();
 

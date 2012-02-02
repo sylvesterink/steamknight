@@ -23,6 +23,11 @@ Game::Game()
 
 Game::~Game()
 {
+    //TODO: This is duplicated in cleanup()
+    if (_window != NULL) {
+        delete _window;
+        _window = NULL;
+    }
     cout << "End Game" << endl;
 }
 
@@ -32,10 +37,20 @@ int Game::execute()
         return 1;
     }
 
+    SDL_Event Event;
+
+    // Run game loop
     while (_isRunning) {
-        processEvents();
+        while (SDL_PollEvent(&Event)) {
+            processEvents(Event);
+        }
+
         processLogic();
         render();
+
+        // Added to prevent monopolization of cpu.
+        SDL_Delay(1);
+
     }
 
     cleanup();
@@ -45,6 +60,22 @@ int Game::execute()
 
 bool Game::initialize()
 {
+    // Initialize SDL
+    if (SDL_Init( SDL_INIT_EVERYTHING ) != 0) {
+        return false;
+    }
+
+    // Create game window
+    _window = new ie_game::GameWindow();
+    if (_window->initialize(800, 600, 32, false, "Ink Engine") == false) {
+        return false;
+    }
+
+    //TODO: put this elsewhere
+    glClearColor(0.0, 0.0, 0.0, 1.0);
+
+    _isRunning = true;
+
     cout << "Initialized" << endl;
     cout << "Version:";
     cout << STEAMKNIGHT_VERSION_MAJOR;
@@ -54,28 +85,32 @@ bool Game::initialize()
     return true;
 }
 
-void Game::processEvents()
+void Game::processEvents(SDL_Event& Event)
 {
-    char quit;
-    cout << "Processing Events" << endl;
-    cin >> quit;
-
-    if (quit == 'q') {
+    if (Event.type == SDL_QUIT) {
         _isRunning = false;
     }
 }
 
 void Game::processLogic()
 {
-    cout << "Processing Logic" << endl;
+
 }
 
 void Game::render()
 {
-    cout << "Rendering" << endl;
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glLoadIdentity();
 }
 
 void Game::cleanup()
 {
+    if (_window != NULL) {
+        delete _window;
+        _window = NULL;
+    }
+
+    SDL_Quit();
+
     cout << "Cleaning Up" << endl;
 }

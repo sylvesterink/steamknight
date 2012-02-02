@@ -3,9 +3,7 @@
 /**
  * @brief Create game object.
  */
-TestBase::TestBase():
-        _isRunning(false),
-        _window(NULL)
+TestBase::TestBase()
 {
 
 }
@@ -44,7 +42,7 @@ int TestBase::execute()
         render();
 
         // Added to prevent monopolization of cpu.
-        SDL_Delay(10);
+        SDL_Delay(16);
 
     }
 

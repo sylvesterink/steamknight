@@ -2,6 +2,7 @@
 #define TESTBASE_H
 
 #include "GameBase.h"
+#include "GameWindow.h"
 
 class TestBase : public ie_game::GameBase {
     public:

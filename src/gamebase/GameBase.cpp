@@ -44,10 +44,6 @@ namespace ie_game
 
             //processLogic();
             //render();
-
-            //// Added to prevent monopolization of cpu.
-            //SDL_Delay(1);
-
         //}
 
         //cleanup();
@@ -61,20 +57,6 @@ namespace ie_game
      */
     bool GameBase::initialize()
     {
-        //// Initialize SDL
-        //if (SDL_Init( SDL_INIT_EVERYTHING ) != 0) {
-            //return false;
-        //}
-
-        //// Create game window
-        //_window = new GameWindow();
-        //if (_window->initialize(800, 600, 32, false, "Ink Engine") == false) {
-            //return false;
-        //}
-
-        ////TODO: put this elsewhere
-        //glClearColor(0.0, 0.0, 0.0, 1.0);
-
         //_isRunning = true;
 
         return true;
@@ -82,13 +64,11 @@ namespace ie_game
 
     /**
      * @brief Given an SDL event, process the event as required.
-     * TODO: Add more events
+     * @param Event The event to process
      */
     void GameBase::processEvents(SDL_Event& Event)
     {
-        //if (Event.type == SDL_QUIT) {
-            //_isRunning = false;
-        //}
+
     }
 
     /**
@@ -103,8 +83,7 @@ namespace ie_game
      */
     void GameBase::render()
     {
-        //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        //glLoadIdentity();
+
     }
 
     /**
@@ -112,11 +91,6 @@ namespace ie_game
      */
     void GameBase::cleanup()
     {
-        //if (_window != NULL) {
-            //delete _window;
-            //_window = NULL;
-        //}
 
-        //SDL_Quit();
     }
 }

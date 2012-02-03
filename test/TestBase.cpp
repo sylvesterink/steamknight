@@ -78,6 +78,7 @@ bool TestBase::initialize()
 
 /**
  * @brief Given an SDL event, process the event as required.
+ * @param Event The event to process
  * TODO: Add more events
  */
 void TestBase::processEvents(SDL_Event& Event)

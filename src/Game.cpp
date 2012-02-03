@@ -85,6 +85,11 @@ bool Game::initialize()
     return true;
 }
 
+/**
+ * @brief Given an SDL event, process the event as required.
+ * @param Event The event to process
+ * TODO: Add more events
+ */
 void Game::processEvents(SDL_Event& Event)
 {
     if (Event.type == SDL_QUIT) {

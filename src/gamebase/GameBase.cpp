@@ -5,7 +5,6 @@ namespace ie_game
     /**
      * @brief Create game object.
      */
-    //TODO: init _window in initializer list
     GameBase::GameBase():
         _isRunning(false),
         _window(NULL)
@@ -31,27 +30,27 @@ namespace ie_game
      */
     int GameBase::execute()
     {
-        if (initialize() == false) {
-            return 1;
-        }
+        //if (initialize() == false) {
+            //return 1;
+        //}
 
-        SDL_Event Event;
+        //SDL_Event Event;
 
-        // Run game loop
-        while (_isRunning) {
-            while (SDL_PollEvent(&Event)) {
-                processEvents(Event);
-            }
+        //// Run game loop
+        //while (_isRunning) {
+            //while (SDL_PollEvent(&Event)) {
+                //processEvents(Event);
+            //}
 
-            processLogic();
-            render();
+            //processLogic();
+            //render();
 
-            // Added to prevent monopolization of cpu.
-            SDL_Delay(1);
+            //// Added to prevent monopolization of cpu.
+            //SDL_Delay(1);
 
-        }
+        //}
 
-        cleanup();
+        //cleanup();
 
         return 0;
     }
@@ -62,21 +61,21 @@ namespace ie_game
      */
     bool GameBase::initialize()
     {
-        // Initialize SDL
-        if (SDL_Init( SDL_INIT_EVERYTHING ) != 0) {
-            return false;
-        }
+        //// Initialize SDL
+        //if (SDL_Init( SDL_INIT_EVERYTHING ) != 0) {
+            //return false;
+        //}
 
-        // Create game window
-        _window = new GameWindow();
-        if (_window->initialize(800, 600, 32, false, "Ink Engine") == false) {
-            return false;
-        }
+        //// Create game window
+        //_window = new GameWindow();
+        //if (_window->initialize(800, 600, 32, false, "Ink Engine") == false) {
+            //return false;
+        //}
 
-        //TODO: put this elsewhere
-        glClearColor(0.0, 0.0, 0.0, 1.0);
+        ////TODO: put this elsewhere
+        //glClearColor(0.0, 0.0, 0.0, 1.0);
 
-        _isRunning = true;
+        //_isRunning = true;
 
         return true;
     }
@@ -87,9 +86,9 @@ namespace ie_game
      */
     void GameBase::processEvents(SDL_Event& Event)
     {
-        if (Event.type == SDL_QUIT) {
-            _isRunning = false;
-        }
+        //if (Event.type == SDL_QUIT) {
+            //_isRunning = false;
+        //}
     }
 
     /**
@@ -104,8 +103,8 @@ namespace ie_game
      */
     void GameBase::render()
     {
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        glLoadIdentity();
+        //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        //glLoadIdentity();
     }
 
     /**
@@ -113,11 +112,11 @@ namespace ie_game
      */
     void GameBase::cleanup()
     {
-        if (_window != NULL) {
-            delete _window;
-            _window = NULL;
-        }
+        //if (_window != NULL) {
+            //delete _window;
+            //_window = NULL;
+        //}
 
-        SDL_Quit();
+        //SDL_Quit();
     }
 }

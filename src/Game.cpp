@@ -49,7 +49,7 @@ int Game::execute()
         render();
 
         // Added to prevent monopolization of cpu.
-        SDL_Delay(1);
+        SDL_Delay(16);
 
     }
 

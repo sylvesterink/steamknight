@@ -1,2 +1,2 @@
-add_library(GameBase GameBase.cpp)
-add_library(GameWindow GameWindow.cpp)
+add_library(GBase GBase.cpp)
+add_library(GWindow GWindow.cpp)

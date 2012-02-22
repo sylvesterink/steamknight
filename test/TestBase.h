@@ -1,10 +1,10 @@
 #ifndef TESTBASE_H
 #define TESTBASE_H
 
-#include "GameBase.h"
-#include "GameWindow.h"
+#include "GBase.h"
+#include "GWindow.h"
 
-class TestBase : public ie_game::GameBase {
+class TestBase : public ie_game::GBase {
     public:
         TestBase();
         virtual ~TestBase();

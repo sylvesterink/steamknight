@@ -2,9 +2,9 @@
 #define STEAMKNIGHT_H
 
 #include <iostream>
-#include "GameBase.h"
+#include "GBase.h"
 
-class Game : public ie_game::GameBase {
+class Game : public ie_game::GBase {
     public:
         Game ();
         virtual ~Game ();

@@ -63,7 +63,7 @@ bool TestBase::initialize()
     }
 
     // Create game window
-    _window = new ie_game::GameWindow();
+    _window = new ie_game::GWindow();
     if (_window->initialize(800, 600, 32, false, "Ink Engine") == false) {
         return false;
     }

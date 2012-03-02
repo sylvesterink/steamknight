@@ -79,13 +79,33 @@ bool TestBase::initialize()
 /**
  * @brief Given an SDL event, process the event as required.
  * @param Event The event to process
- * TODO: Add more events
  */
-void TestBase::processEvents(SDL_Event& Event)
+void TestBase::processEvents(SDL_Event& event)
 {
-    if (Event.type == SDL_QUIT) {
-        _isRunning = false;
+    ie_game::GEvent::OnEvent(&event);
+}
+
+/**
+ * @brief Process the KeyDown event.
+ *        If the user hits Esc, exit the program
+ * @param sym SDL Key value
+ * @param mod SDL key modification
+ * @param unicode Unicode value of pressed key
+ */
+void TestBase::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
+{
+    if (sym == SDLK_ESCAPE) {
+        OnExit();
     }
+
+}
+
+/**
+ * @brief If called, end the program loop to exit program
+ */
+void TestBase::OnExit()
+{
+    _isRunning = false;
 }
 
 /**

@@ -90,9 +90,9 @@ bool Game::initialize()
  * @param Event The event to process
  * TODO: Add more events
  */
-void Game::processEvents(SDL_Event& Event)
+void Game::processEvents(SDL_Event& event)
 {
-    if (Event.type == SDL_QUIT) {
+    if (event.type == SDL_QUIT) {
         _isRunning = false;
     }
 }

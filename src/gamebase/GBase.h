@@ -3,6 +3,7 @@
 
 #include <SDL/SDL.h>
 
+#include "GEvent.h"
 #include "GWindow.h"
 
 namespace ie_game
@@ -10,7 +11,7 @@ namespace ie_game
     /**
      * @brief The basic game object context.
      */
-    class GBase {
+    class GBase : public GEvent {
         protected:
             bool _isRunning;
             GWindow* _window;

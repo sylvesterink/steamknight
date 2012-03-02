@@ -13,7 +13,11 @@ class TestBase : public ie_game::GBase {
 
     protected:
         virtual bool initialize();
-        virtual void processEvents(SDL_Event&);
+        virtual void processEvents(SDL_Event& event);
+
+        virtual void OnExit();
+        virtual void OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode);
+
         virtual void processLogic();
         virtual void render();
 

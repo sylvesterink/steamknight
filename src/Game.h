@@ -13,7 +13,7 @@ class Game : public ie_game::GBase {
 
     protected:
         virtual bool initialize();
-        virtual void processEvents(SDL_Event&);
+        virtual void processEvents(SDL_Event& event);
         virtual void processLogic();
         virtual void render();
 

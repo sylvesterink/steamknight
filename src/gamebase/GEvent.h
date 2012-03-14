@@ -5,6 +5,10 @@
 
 namespace ie_game {
 
+    /**
+     * @brief Base class for dealing with SDL events.
+     *        Derived classes implement the required event handling functions.
+     */
     class GEvent
     {
         public:
@@ -45,8 +49,6 @@ namespace ie_game {
             virtual void OnActiveEvent(SDL_Event* event);
             virtual void OnMouseDown(SDL_Event* event);
             virtual void OnMouseUp(SDL_Event* event);
-        private:
-            /* data */
     };
 
 } /* namespace ie_game */
